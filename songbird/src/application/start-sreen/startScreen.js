@@ -9,24 +9,26 @@ export class StartScreen extends Control {
         super(parentNode, 'div', 'start-screen', '');
         const mainWrapper = new Control(this.node, 'div', 'main-wrapper', '');
         const header = new Control(mainWrapper.node, 'header', 'header', '');
-        const logo = new Control(header.node, 'a', 'logo', 'SongBirg');
+        const logo = new Control(header.node, 'a', 'logo', 'SongBird');
+        // logo.node.setAttribute('src', '../../assets/img/songbird-logo.png');
         const nav = new Control(header.node, 'nav', 'main-nav', '');
         const navList = new Control(nav.node, 'ul', 'nav-list', '');
         const navItemGame = new Control(navList.node, 'li', 'nav-item-game', '');      
-        const navGameLink = new Control(navItemGame.node, 'a', 'nav-game-link', 'New Game');
+        const navGameLink = new Control(navItemGame.node, 'a', 'nav-game-link', 'Новая игра');
         navGameLink.node.onclick = () => {            
         };
         const navItemGallery = new Control(navList.node, 'li', 'nav-item-gallery', '');
-        const navGalleryLink = new Control(navItemGallery.node, 'a', 'nav-gallery-link', 'Gallery');
+        const navGalleryLink = new Control(navItemGallery.node, 'a', 'nav-gallery-link', 'Галерея');
         navGalleryLink.node.onclick = () => {            
         };
 
         const main = new Control(mainWrapper.node, 'main', 'main', '');
-        const title = new Control(main.node, 'h1', 'start-screen-title', 'Songbird');
-        const gameDescription = new Control(main.node, 'p', 'game-description', '');
+        const startContainer = new Control(main.node, 'div', 'start-container', '');
+        const startScreenImage = new Control(startContainer.node, 'div', 'start-screen-image', '');
+        const gameDescription = new Control(startContainer.node, 'p', 'game-description', '');
         gameDescription.node.textContent = 'Приложение-викторина для распознавания птиц по их голосам.'
 
-        const newGameButton = new Control(main.node, 'button', '', 'Начать игру');
+        const newGameButton = new Control(startContainer.node, 'button', 'button-start', 'Начать игру');
         newGameButton.node.onclick = () => {
             this.onNewGame();
         };

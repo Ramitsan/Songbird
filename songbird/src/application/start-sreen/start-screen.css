@@ -1,5 +1,5 @@
 .start-screen {
-    background-color:darkgreen;
+    background-color: darkgreen;
     background-image: url('../../assets/img/start-background.jpg');
     background-position: center;
     background-size: cover;
@@ -7,30 +7,77 @@
     width: 100%;
     height: 100vh;
 }
+
 .main-wrapper {
-    width: 1100px;
+    width: 1200px;
+    height: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
+    flex-grow: 0;
     width: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:rgb(9, 102, 29);
+    background-color: rgb(9, 102, 29);
+}
+
+.logo {
+    color: antiquewhite;
+    font-size: 26px;
+}
+
+.logo:focus,
+.logo:hover {
+    transition: all 0.3s ease-out;
+    color: rgb(230, 140, 23);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav-item-game,
+.nav-item-gallery {
+    list-style: none;
+    padding-left: 20px;
 }
 
 .nav-game-link,
 .nav-gallery-link {
     display: inline-block;
+    font-size: 20px;
+    color: antiquewhite;
+    transition: all 0.3s ease-out;
     cursor: pointer;
 }
 
+.nav-game-link:focus,
+.nav-gallery-link:focus,
+.nav-game-link:hover,
+.nav-gallery-link:hover {
+    transition: all 0.3s ease-out;
+    color: rgb(230, 140, 23);
+}
+
 .main {
-    height: 78vh;
-    padding: 50px;
+    flex-grow: 1;
     background-color: rgba(255, 255, 255, .7);
+}
+
+.start-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .start-screen-title {
@@ -38,19 +85,56 @@
     text-align: center;
 }
 
+.start-screen-image {
+    width: 230px;
+    height: 230px;
+    margin: 0 auto;
+    background-image: url('../../assets/img/songbird.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
 .game-description {
+    width: 450px;
     margin: 20px auto;
-    font-size: 20px;
+    font-size: 28px;
+    line-height: 120%;
+    color: purple;
+    font-weight: 600;
     text-align: center;
 }
 
+.button-start {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: rgb(9, 102, 29);
+    font-size: 26px;
+    color: antiquewhite;
+    transition: all 0.3s ease-out;
+    border-radius: 5px;
+}
+
+.button-start:focus,
+.button-start:hover {
+    background-color: rgb(230, 140, 23);
+    transition: all 0.3s ease-out;
+    /* transform: scale(1.2); */
+    /* opacity: 1; */
+    /* box-shadow: 0 0 10px 5px #055f35; */
+}
+
 .footer {
+    flex-grow: 0;
     width: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:rgb(9, 102, 29);
+    background-color: rgb(9, 102, 29);
 }
 
 .author-link-github {
@@ -67,10 +151,63 @@
     text-decoration: none
 }
 
+.app-create-year {
+    font-size: 20px;
+    color: antiquewhite;
+}
+
 .course-logo {
     width: 100px;
     height: 50px;
     cursor: pointer;
     background-image: url('../../assets/icons/rs_school_js.svg');
     background-repeat: no-repeat;
+}
+
+@media (max-width: 1299px) {
+    .main-wrapper {
+        width: 950px;
+    }
+}
+
+@media (max-width: 999px) {
+    .main-wrapper {
+        width: 630px;
+    }
+
+    .start-screen-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .game-description {
+        width: 466px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 639px) {
+    .main-wrapper {
+        width: 90%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-item-game,
+    .nav-item-gallery {
+        padding-bottom: 10px;
+        padding-left: 0;
+    }
+
+    .nav-game-link,
+    .nav-gallery-link {
+        font-size: 26px;
+    }
+
+    .game-description {
+        width: 85%;
+        font-size: 26px;
+    }
 }
