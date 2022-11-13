@@ -2,6 +2,7 @@ import Control from '../control/control';
 import { GameScreen } from './game-screen/gameScreen';
 import { StartScreen } from './start-sreen/startScreen';
 import { ResultsScreen } from './results-screen/resultsScreen';
+import { GalleryScreen } from './gallery-screen/galleryScreen';
 
 export class Application extends Control {
     constructor(parentNode) {
@@ -11,6 +12,15 @@ export class Application extends Control {
 
     #mainCycle() {
         const startScreen = new StartScreen(this.node);
+        startScreen.onGallery = () => {
+            startScreen.destroy();
+            const galleryScreen = new GalleryScreen(this.node);
+            galleryScreen.onStart = () => {
+                console.log(1);
+                galleryScreen.destroy();
+                this.#mainCycle();
+            }
+        }
         startScreen.onNewGame = () => {
             startScreen.destroy();
             const gameScreen = new GameScreen(this.node);
