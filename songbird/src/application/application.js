@@ -16,7 +16,6 @@ export class Application extends Control {
             startScreen.destroy();
             const galleryScreen = new GalleryScreen(this.node);
             galleryScreen.onStart = () => {
-                console.log(1);
                 galleryScreen.destroy();
                 this.#mainCycle();
             }

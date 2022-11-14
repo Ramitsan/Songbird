@@ -1,7 +1,6 @@
 import Control from '../../control/control';
 import '../style.css';
 import './start-screen.css';
-import {GalleryScreen} from '../gallery-screen/galleryScreen';
 
 import imagePath from './../../assets/img/songbird.png';
 
@@ -34,7 +33,7 @@ export class StartScreen extends Control {
         const startScreenImage = new Control(startContainer.node, 'img', 'start-screen-image', '');
         startScreenImage.node.src = imagePath;
         const gameDescription = new Control(startContainer.node, 'p', 'game-description', '');
-        gameDescription.node.textContent = 'Приложение-викторина для распознавания птиц по их голосам.'
+        gameDescription.node.textContent = 'Приложение-викторина для распознавания птиц по их голосам';
 
         const newGameButton = new Control(startContainer.node, 'button', 'button-start', 'Начать игру');
         newGameButton.node.onclick = () => {
@@ -49,6 +48,5 @@ export class StartScreen extends Control {
         const courseLogo = new Control(footer.node, 'a', 'course-logo', '');
         courseLogo.node.setAttribute('href', 'https://rs.school/js/');
         courseLogo.node.setAttribute('target', '_blank');
-
     }    
 }

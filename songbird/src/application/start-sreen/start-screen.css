@@ -89,11 +89,6 @@
     width: 230px;
     height: 230px;
     margin: 0 auto;
-    /* background-image: url('../../assets/img/songbird.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 5px; */
 }
 
 .game-description {
@@ -174,7 +169,7 @@
     .main-wrapper {
         width: 630px;
     }
-    
+
     .game-description {
         width: 466px;
         font-size: 28px;
