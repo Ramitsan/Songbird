@@ -49,7 +49,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(9, 102, 29);
+  background-image: linear-gradient(113.96deg, #08630d 1.49%, #1da518 101.44%);
 }
 
 .logo {
@@ -60,5 +60,24 @@ button {
 .logo:focus,
 .logo:hover {
   transition: all 0.3s ease-out;
-  color: rgb(230, 140, 23);
+  color: coral;
+}
+
+
+@media (max-width: 1299px) {
+  .main-wrapper {
+      width: 950px;
+  }
+}
+
+@media (max-width: 999px) {
+  .main-wrapper {
+      width: 630px;
+  }
+}
+
+@media (max-width: 639px) {
+  .main-wrapper {
+      width: 90%;
+  }
 }

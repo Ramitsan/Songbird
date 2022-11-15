@@ -12,7 +12,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .nav-item-game,
@@ -35,7 +34,7 @@
 .nav-game-link:hover,
 .nav-gallery-link:hover {
     transition: all 0.3s ease-out;
-    color: rgb(230, 140, 23);
+    color: coral;
 }
 
 .main {
@@ -67,7 +66,7 @@
     margin: 20px auto;
     font-size: 28px;
     line-height: 120%;
-    color: purple;
+    color: coral;
     font-weight: 600;
     text-align: center;
 }
@@ -86,7 +85,7 @@
 
 .button-start:focus,
 .button-start:hover {
-    background-color: chocolate;
+    background-color: #E47209;
     transition: all 0.3s ease-out;
 }
 
@@ -97,7 +96,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(9, 102, 29);
+    background-image: linear-gradient(113.96deg, #08630d 1.49%, #1da518 101.44%);
 }
 
 .author-link-github {
@@ -127,17 +126,8 @@
     background-repeat: no-repeat;
 }
 
-@media (max-width: 1299px) {
-    .main-wrapper {
-        width: 950px;
-    }
-}
 
 @media (max-width: 999px) {
-    .main-wrapper {
-        width: 630px;
-    }
-
     .game-description {
         width: 466px;
         font-size: 28px;
@@ -145,10 +135,6 @@
 }
 
 @media (max-width: 639px) {
-    .main-wrapper {
-        width: 90%;
-    }
-
     .nav-list {
         flex-direction: column;
     }

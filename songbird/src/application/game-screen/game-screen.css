@@ -1,6 +1,5 @@
 .game-screen {
     width: 100%;
-    height: 100vh;
     background-color: lightgreen;
 }
 
@@ -12,15 +11,17 @@
 .game-nav-list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
 }
 
 .category-item {
     width: calc(1200px / 6);
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     padding: 10px;
-    background-color: chocolate;
+    background-color: #E47209;;
     font-size: 20px;
     text-align: center;
 }
@@ -66,6 +67,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 
@@ -80,7 +82,7 @@
     width: 100%;
     display: inline-block;
     padding: 15px;
-    padding-left: 30px;
+    padding-left: 35px;
     font-size: 20px;
     text-align: left;
     color: antiquewhite;
@@ -92,11 +94,12 @@
 }
 
 .answer-indicator {
-    display: inline-block;
+    display: block;
     width: 10px;
     height: 10px;
     position: relative;
-    left: -10px;
+    top: -15px;
+    left: -20px;
     border-radius: 50%;
     background-color: cadetblue;
 }
@@ -124,13 +127,12 @@
 .temp-text {
     font-size: 20px;
     color: antiquewhite;
-    text-align: left;
     margin-bottom: 8px;
 }
 
 .info-image {
     width: 230px;
-    height: 170px;
+    height: auto;
     margin-right: 15px;
     border-radius: 5px;
 }
@@ -140,8 +142,20 @@
     flex-direction: column;
 } 
 
+.info-bird-name {
+    font-size: 24px;
+    color: antiquewhite;
+    margin-bottom: 10px;
+}
+
+.info-bird-lat-name {
+    font-size: 20px;
+    color: coral;
+    border-bottom: 1px dotted coral;
+}
+
 .info-text {
-    font-size: 16px;
+    font-size: 18px;
     color: antiquewhite;
     text-align: justify;
 }
@@ -150,6 +164,7 @@
     width: 100%;
     display: block;
     margin: 0 auto;
+    margin-bottom: 20px;
     padding: 15px 40px;
     background-color: rgb(9, 102, 29);
     font-size: 26px;
@@ -160,6 +175,77 @@
 
 .button-next-question:focus,
 .button-next-question:hover {
-    background-color: chocolate;
+    background-color: #E47209;;
     transition: all 0.3s ease-out;
 }
+
+@media (max-width: 1299px) {
+    .category-item {
+        width: calc(950px / 6);
+    }
+  }
+  
+  @media (max-width: 999px) {
+    .game-screen {
+        height: 100%;
+    }
+    .category-item {
+        width: calc(950px / 6);
+    }
+    .question-image {
+        width: 225px;
+        height: auto;
+    }
+    .answers-and-info-wrapper {
+        align-items: flex-start;
+    }
+    .top-info-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .info-image  {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-height: 300px;
+    }
+    .info-title-and-player {
+        align-self: flex-start;
+    }
+  }
+  
+  @media (max-width: 639px) {
+    .game-nav-list {
+        flex-wrap: wrap;
+    }
+    .category-item {
+        width: calc(100% / 3);
+        font-size: 18px;
+    }     
+    .category-item:not(:last-child){
+        border-right: none;        
+    }
+    .category-item:not(:nth-child(3n)) {
+        border-right: 1px solid antiquewhite;
+    }
+    .category-item:not(:nth-child(n+4)) {
+        border-bottom: 1px solid antiquewhite;
+    }
+    .question-block {
+        padding: 10px;
+    }
+    .question-image {
+        width: 210px;
+        height: auto;
+    }
+    .answers-and-info-wrapper {
+        flex-direction: column;
+    }
+    .answers-block {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .info-block {
+        width: 100%;
+        padding: 8px;
+    }     
+  }

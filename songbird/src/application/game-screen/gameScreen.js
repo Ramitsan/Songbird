@@ -35,7 +35,7 @@ export class GameScreen extends Control {
         const containerRight = new Control(questionBlockWrapper.node, 'div', 'container-right', '');
         const birdName = new Control(containerRight.node, 'h2', 'bird-name', '*****');
         const mainPlayer = new Control(containerRight.node, 'audio', 'main-player', '');
-        mainPlayer.src = audioPath;
+        mainPlayer.node.src = audioPath;
 
         const answersAndInfoWrapper = new Control(mainWrapper.node, 'div', 'answers-and-info-wrapper', '');
 
