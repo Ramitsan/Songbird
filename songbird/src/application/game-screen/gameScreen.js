@@ -43,11 +43,26 @@ export class GameScreen extends Control {
         const answersBlock = new Control(answersAndInfoWrapper.node, 'div', 'answers-block', '');
         const answersList = new Control(answersBlock.node, 'ul', 'answers-list', '');
 
-        // const answersCount = 6;
         const createAnswersItems = () => {
             for (let i = 0; i < birdsDataRu.length; i++) {             
                 const answerItem = new Control(answersList.node, 'li', 'answer-item', `${birdsDataRu[0][i].name}`);
                 const answerIndicator = new Control(answerItem.node, 'span', 'answer-indicator', '');
+                answerItem.node.onclick = () => {
+                    firstTempText.node.classList.add('hide-element');
+                    secondTempText.node.classList.add('hide-element');
+
+                    infoBirdName.node.classList.remove('hide-element');
+                    infoBirdName.node.textContent = birdsDataRu[0][i].name;
+
+                    infoBirdLatName.node.classList.remove('hide-element');
+                    infoBirdLatName.node.textContent = birdsDataRu[0][i].species;
+
+                    infoImage.node.classList.remove('hide-element');
+                    infoImage.node.src = birdsDataRu[0][i].image;
+
+                    infoText.node.classList.remove('hide-element');
+                    infoText.node.textContent = birdsDataRu[0][i].description;                  
+                }
             }
         }
         createAnswersItems();
@@ -56,22 +71,22 @@ export class GameScreen extends Control {
         const testData = birdsDataRu[0][0];
         const infoBlock = new Control(answersAndInfoWrapper.node, 'div', 'info-block', '');
         const infoBlockWrapper = new Control(infoBlock.node, 'div', 'info-block-wrapper', '');
-        const topInfoWrapper = new Control(infoBlockWrapper.node, 'div', 'top-info-wrapper', '');
-        const firstTempText = new Control(topInfoWrapper.node, 'p', 'temp-text hide-element', 'Послушайте плеер');
-        const secondTempText = new Control(topInfoWrapper.node, 'p', 'temp-text hide-element', 'Выберите птицу из списка');
-        const infoImage = new Control(topInfoWrapper.node, 'img', 'info-image', '');
-        console.log(testData.image);
-        infoImage.src = testData.image;
+        const firstTempText = new Control(infoBlock.node, 'p', 'temp-text', 'Послушайте плеер');
+        const secondTempText = new Control(infoBlock.node, 'p', 'temp-text', 'Выберите птицу из списка');
+
+        const topInfoWrapper = new Control(infoBlockWrapper.node, 'div', 'top-info-wrapper', '');      
+        const infoImage = new Control(topInfoWrapper.node, 'img', 'info-image hide-element', '');
+        infoImage.node.src = testData.image;
 
         const infoTitleAndPlayer = new Control(topInfoWrapper.node, 'div', 'info-title-and-player', '');
-        const infoBirdName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-name', `${testData.name}`);
-        const infoBirdLatName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-lat-name', `${testData.species}`);
-        const infoAudio = new Control(infoTitleAndPlayer.node, 'audio', 'info-audio', '');
+        const infoBirdName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-name hide-element', `${testData.name}`);
+        const infoBirdLatName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-lat-name hide-element', `${testData.species}`);
+        const infoAudio = new Control(infoTitleAndPlayer.node, 'audio', 'info-audio hide-element', '');
         console.log(testData.audio);
-        infoAudio.src = testData.audio;
+        infoAudio.node.src = testData.audio;
 
         const bottomInfoWrapper = new Control(infoBlockWrapper.node, 'div', 'bottom-info-wrapper', ''); 
-        const infoText = new Control(bottomInfoWrapper.node, 'p', 'info-text', `${testData.description}`)
+        const infoText = new Control(bottomInfoWrapper.node, 'p', 'info-text hide-element', `${testData.description}`)
 
 
         const buttonNextQuestion = new Control(mainWrapper.node, 'button', 'button-next-question', 'Следующий вопрос');
