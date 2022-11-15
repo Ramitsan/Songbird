@@ -23,7 +23,7 @@ export class Application extends Control {
         startScreen.onNewGame = () => {
             startScreen.destroy();
             const gameScreen = new GameScreen(this.node);
-            gameScreen.onResults = () => {
+            gameScreen.onNextQuestion = () => {
                 gameScreen.destroy();
                 const resultsScreen = new ResultsScreen(this.node);
                 resultsScreen.onNewGame = () => {
