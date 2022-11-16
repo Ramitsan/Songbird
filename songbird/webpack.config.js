@@ -35,8 +35,24 @@ const config = {
                 loader: 'babel-loader',
             },
             {
-                test: /\.css$/i,
+                test:/[^m]\.css/i,
                 use: [stylesHandler,'css-loader'],
+            },
+            {
+                test: /\.m.сss$/i,
+                use: [
+                    stylesHandler,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: {
+                                exportLocalsConvention: "camelCase",
+                                localIdentName: "[local]--[hash:base64:5]",
+                                localIdentContext: path.resolve(__dirname, "src")
+                            },
+                        },
+                    }
+                ],
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|mp3)$/i,

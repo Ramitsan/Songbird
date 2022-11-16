@@ -1,0 +1,76 @@
+.audio-player-wrapper {
+    display: flex;
+}
+
+.audio-button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 3px solid antiquewhite;
+    border-radius: 50%;
+    color: antiquewhite;
+    outline: 0;
+    background-size: 25px 25px;
+
+    background-repeat: no-repeat;
+}
+
+.audio-button-play {
+    background-image: url('../../assets/icons/play-button.svg');
+    background-position: 14px center;
+}
+
+.audio-button-pause {
+    background-image: url('../../assets/icons/pause-button.svg');
+    background-position: center;
+}
+
+.audio-timebar-wrapper {
+    margin-left: 20px;
+}
+
+.audio-progress {
+    width: 500px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: antiquewhite;
+    margin: 20px 0;
+}
+
+.audio-timebar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.audio-time-passed,
+.audio-time-total {
+    display: inline-block;
+    color: antiquewhite;
+    font-size: 18px;
+}
+
+@media (max-width: 1299px) {
+    .audio-progress {
+        width: 445px;
+    }
+}
+
+@media (max-width: 999px) {
+    .audio-timebar-wrapper {
+        margin-left: 10px;
+    }
+
+    .audio-progress {
+        width: 280px;
+    }
+
+}
+
+@media (max-width: 639px) {  
+    .audio-timebar-wrapper {
+        width: 80%;
+    }
+    .audio-progress {
+        width: 100%;
+    }
+}

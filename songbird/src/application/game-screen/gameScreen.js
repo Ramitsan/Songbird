@@ -4,7 +4,9 @@ import birdsDataRu from '../../data/data-ru';
 import '../../styles/style.css';
 import './game-screen.css';
 import questionImagePath from './../../assets/img/question-image.png';
-import { AudioPlayer } from '../../components/audio-player/audio-player';
+import { AudioPlayerMain } from '../../components/audio-player/audio-player-main';
+import { AudioPlayerInfo } from '../../components/audio-player/audio-player-info';
+import { generateRandomElement } from '../utils';
 
 
 export class GameScreen extends Control {
@@ -35,8 +37,10 @@ export class GameScreen extends Control {
         const containerRight = new Control(questionBlockWrapper.node, 'div', 'container-right', '');
         const birdName = new Control(containerRight.node, 'h2', 'bird-name', '*****');
         // аудио плеер
-        const mainPlayer = new AudioPlayer(containerRight.node);
-
+        const testData = birdsDataRu[0][0];
+        const audioPlayerMain = new AudioPlayerMain(containerRight.node, testData.audio);
+        console.log(testData.audio);
+    
         const answersAndInfoWrapper = new Control(mainWrapper.node, 'div', 'answers-and-info-wrapper', '');
 
         // блок с ответами
@@ -67,8 +71,7 @@ export class GameScreen extends Control {
         }
         createAnswersItems();
 
-        //блок с информацией о птице
-        const testData = birdsDataRu[0][0];
+        //блок с информацией о птице     
         const infoBlock = new Control(answersAndInfoWrapper.node, 'div', 'info-block', '');
         const infoBlockWrapper = new Control(infoBlock.node, 'div', 'info-block-wrapper', '');
         const firstTempText = new Control(infoBlock.node, 'p', 'temp-text', 'Послушайте плеер');
@@ -81,7 +84,7 @@ export class GameScreen extends Control {
         const infoTitleAndPlayer = new Control(topInfoWrapper.node, 'div', 'info-title-and-player', '');
         const infoBirdName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-name hide-element', `${testData.name}`);
         const infoBirdLatName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-lat-name hide-element', `${testData.species}`);
-        // const infoAudioPlayer = new AudioPlayer(infoTitleAndPlayer.node);
+        // const audioPlayerInfo = new AudioPlayerInfo(infoTitleAndPlayer.node, testData.audio);
 
         const bottomInfoWrapper = new Control(infoBlockWrapper.node, 'div', 'bottom-info-wrapper', ''); 
         const infoText = new Control(bottomInfoWrapper.node, 'p', 'info-text hide-element', `${testData.description}`)
@@ -90,7 +93,22 @@ export class GameScreen extends Control {
         const buttonNextQuestion = new Control(mainWrapper.node, 'button', 'button-next-question button-next-question--disabled', 'Следующий вопрос');
         buttonNextQuestion.node.disabled = true; 
         buttonNextQuestion.node.onclick = () => {
-            this.onNextQuestion();
+            if(this.categoryIndex <= 5) {
+                this.onNextQuestion();
+            } else {
+                this.onFinish();
+            }
+            
         }
+
+        this. getRandomQuestion();
     }
+
+    getRandomQuestion() {
+        const randomQuestion = generateRandomElement(birdsDataRu[0]);
+        console.log(randomQuestion);
+    }  
+
+
 }
+

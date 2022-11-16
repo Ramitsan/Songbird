@@ -23,7 +23,7 @@ export class Application extends Control {
         startScreen.onNewGame = () => {
             startScreen.destroy();
             const gameScreen = new GameScreen(this.node);
-            gameScreen.onNextQuestion = () => {
+            gameScreen.onFinish = () => {
                 gameScreen.destroy();
                 const resultsScreen = new ResultsScreen(this.node);
                 resultsScreen.onNewGame = () => {
@@ -31,7 +31,6 @@ export class Application extends Control {
                     this.#mainCycle();
                 }
             }
-        }
-         
+        }         
     }
 }
