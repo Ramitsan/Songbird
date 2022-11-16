@@ -1,10 +1,10 @@
 import Control from '../../control/control';
 import { categoriesNames } from '../const';
 import birdsDataRu from '../../data/data-ru';
-import '../style.css';
+import '../../styles/style.css';
 import './game-screen.css';
 import questionImagePath from './../../assets/img/question-image.png';
-import audioPath from '../../assets/audio/sound.mp3';
+import { AudioPlayer } from '../../components/audio-player/audio-player';
 
 
 export class GameScreen extends Control {
@@ -34,8 +34,8 @@ export class GameScreen extends Control {
 
         const containerRight = new Control(questionBlockWrapper.node, 'div', 'container-right', '');
         const birdName = new Control(containerRight.node, 'h2', 'bird-name', '*****');
-        const mainPlayer = new Control(containerRight.node, 'audio', 'main-player', '');
-        mainPlayer.node.src = audioPath;
+        // аудио плеер
+        const mainPlayer = new AudioPlayer(containerRight.node);
 
         const answersAndInfoWrapper = new Control(mainWrapper.node, 'div', 'answers-and-info-wrapper', '');
 
@@ -81,15 +81,14 @@ export class GameScreen extends Control {
         const infoTitleAndPlayer = new Control(topInfoWrapper.node, 'div', 'info-title-and-player', '');
         const infoBirdName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-name hide-element', `${testData.name}`);
         const infoBirdLatName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-lat-name hide-element', `${testData.species}`);
-        const infoAudio = new Control(infoTitleAndPlayer.node, 'audio', 'info-audio hide-element', '');
-        console.log(testData.audio);
-        infoAudio.node.src = testData.audio;
+        // const infoAudioPlayer = new AudioPlayer(infoTitleAndPlayer.node);
 
         const bottomInfoWrapper = new Control(infoBlockWrapper.node, 'div', 'bottom-info-wrapper', ''); 
         const infoText = new Control(bottomInfoWrapper.node, 'p', 'info-text hide-element', `${testData.description}`)
 
 
-        const buttonNextQuestion = new Control(mainWrapper.node, 'button', 'button-next-question', 'Следующий вопрос');
+        const buttonNextQuestion = new Control(mainWrapper.node, 'button', 'button-next-question button-next-question--disabled', 'Следующий вопрос');
+        buttonNextQuestion.node.disabled = true; 
         buttonNextQuestion.node.onclick = () => {
             this.onNextQuestion();
         }

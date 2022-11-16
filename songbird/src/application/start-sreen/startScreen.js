@@ -1,5 +1,5 @@
 import Control from '../../control/control';
-import '../style.css';
+import '../../styles/style.css';
 import './start-screen.css';
 
 import imagePath from './../../assets/img/songbird.png';
