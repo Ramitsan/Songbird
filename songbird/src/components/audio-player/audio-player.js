@@ -15,7 +15,7 @@ export class AudioPlayer extends Control {
 
         this.audio.ontimeupdate = () => {
             this.showDurationAudio();
-        };    
+        };
 
         const audioButtonPlay = new Control(this.node, 'button', styles['audio-button'] + ' ' + styles['audio-button-play'], '');
         audioButtonPlay.node.onclick = () => {
@@ -34,6 +34,22 @@ export class AudioPlayer extends Control {
         this.audioTimePassed = audioTimePassed;
         const audioTimeTotal = new Control(audioTimebar.node, 'span', styles['audio-time-total'], '00:00');
         this.audioTimeTotal = audioTimeTotal;
+
+        // регулятор громкости звука
+        const volumeControlWrapper = new Control(audioTimebarWrapper.node, 'div', styles['volume-control-wrapper'], '');
+        const volumeMinus = new Control(volumeControlWrapper.node, 'span', styles['volume-minus'], '');
+        const volumeControl = new Control(volumeControlWrapper.node, 'input', styles['volume-control'], '');
+        this.volumeControl = volumeControl;
+        this.volumeControl.node.setAttribute('type', 'range');
+        this.volumeControl.node.setAttribute('min', '0');
+        this.volumeControl.node.setAttribute('max', '100');
+        this.volumeControl.node.setAttribute('step', '1');
+        this.volumeControl.node.setAttribute('value', '100');
+        
+        this.volumeControl.node.oninput = () => {
+            this.changeVolume();
+        }
+        const volumePlus = new Control(volumeControlWrapper.node, 'span', styles['volume-plus'], '');
     }
 
     audioPlay() {
@@ -58,12 +74,23 @@ export class AudioPlayer extends Control {
         // общее время аудио-трека
         const minutesTotal = Math.floor(duration / 60);
         const secondsTotal = Math.floor(duration % 60);
-      
+
         this.audioTimePassed.node.textContent = `${addZero(minutesPassed)}:${addZero(secondsPassed)}`;
-        this.audioTimeTotal.node.textContent = `${addZero(minutesTotal)}:${addZero(secondsTotal)}`;        
+        this.audioTimeTotal.node.textContent = `${addZero(minutesTotal)}:${addZero(secondsTotal)}`;
     }
 
     stop() {
         this.audio.pause();
+    }
+
+    changeVolume() {
+        const min =  this.volumeControl.min;
+        const max =  this.volumeControl.max;
+        const val =  this.volumeControl.value;    
+
+        // this.volumeControl.node.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
+        this.volumeControl.node.style.backgroundSize = `${max / 100 * val}% 100%`;
+        
+        this.audio.volume = this.volumeControl.node.value / 100;
     }
 }
