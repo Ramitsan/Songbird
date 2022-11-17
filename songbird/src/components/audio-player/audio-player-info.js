@@ -1,5 +1,5 @@
 import { AudioPlayer } from './audio-player';
-import styles from './audio-player-info.css';
+import styles from './audio-player-info.m.css';
 
 
 export class AudioPlayerInfo extends AudioPlayer {

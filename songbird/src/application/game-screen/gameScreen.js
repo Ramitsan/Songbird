@@ -63,17 +63,13 @@ export class GameScreen extends Control {
                     firstTempText.node.classList.add('hide-element');
                     secondTempText.node.classList.add('hide-element');
 
-                    infoBirdName.node.classList.remove('hide-element');
-                    infoBirdName.node.textContent = birdsDataRu[0][i].name;
+                    infoBlockWrapper.node.classList.remove('hide-element');
 
-                    infoBirdLatName.node.classList.remove('hide-element');
-                    infoBirdLatName.node.textContent = birdsDataRu[0][i].species;
-
-                    infoImage.node.classList.remove('hide-element');
-                    infoImage.node.src = birdsDataRu[0][i].image;
-
-                    infoText.node.classList.remove('hide-element');
-                    infoText.node.textContent = birdsDataRu[0][i].description; 
+                    infoBirdName.node.textContent = birdsDataRu[0][i].name;                   
+                    infoBirdLatName.node.textContent = birdsDataRu[0][i].species;                 
+                    infoImage.node.src = birdsDataRu[0][i].image;                  
+                    infoText.node.textContent = birdsDataRu[0][i].description;                    
+                    audioPlayerInfo.node.src =  birdsDataRu[0][i].audio;
                     
                     if(answerItem.node.textContent === this.randomQuestion.name) {
                         console.log(1);
@@ -94,21 +90,22 @@ export class GameScreen extends Control {
 
         //блок с информацией о птице     
         const infoBlock = new Control(answersAndInfoWrapper.node, 'div', 'info-block', '');
-        const infoBlockWrapper = new Control(infoBlock.node, 'div', 'info-block-wrapper', '');
+        const infoBlockWrapper = new Control(infoBlock.node, 'div', 'info-block-wrapper hide-element', '');
         const firstTempText = new Control(infoBlock.node, 'p', 'temp-text', 'Послушайте плеер');
         const secondTempText = new Control(infoBlock.node, 'p', 'temp-text', 'Выберите птицу из списка');
 
         const topInfoWrapper = new Control(infoBlockWrapper.node, 'div', 'top-info-wrapper', '');      
-        const infoImage = new Control(topInfoWrapper.node, 'img', 'info-image hide-element', '');
+        const infoImage = new Control(topInfoWrapper.node, 'img', 'info-image', '');
         infoImage.node.src = testData.image;
 
         const infoTitleAndPlayer = new Control(topInfoWrapper.node, 'div', 'info-title-and-player', '');
-        const infoBirdName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-name hide-element', `${testData.name}`);
-        const infoBirdLatName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-lat-name hide-element', `${testData.species}`);
-        // const audioPlayerInfo = new AudioPlayerInfo(infoTitleAndPlayer.node, testData.audio);
+        const infoBirdName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-name', `${testData.name}`);
+        const infoBirdLatName = new Control(infoTitleAndPlayer.node, 'h3', 'info-bird-lat-name', `${testData.species}`);
+        const audioPlayerInfo = new AudioPlayerInfo(infoTitleAndPlayer.node, testData.audio);
+        audioPlayerInfo.node.src = testData.audio;
 
         const bottomInfoWrapper = new Control(infoBlockWrapper.node, 'div', 'bottom-info-wrapper', ''); 
-        const infoText = new Control(bottomInfoWrapper.node, 'p', 'info-text hide-element', `${testData.description}`)
+        const infoText = new Control(bottomInfoWrapper.node, 'p', 'info-text', `${testData.description}`)
 
 
         const buttonNextQuestion = new Control(mainWrapper.node, 'button', 'button-next-question', 'Следующий вопрос');

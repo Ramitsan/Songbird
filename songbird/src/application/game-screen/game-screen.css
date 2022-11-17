@@ -42,7 +42,7 @@
     width: 300px;
     height: auto;
     border-radius: 5px;
-    margin-right: 30px;
+    margin-right: 70px;
 }
 
 .question-block-wrapper {
@@ -59,7 +59,7 @@
     margin-top: 10px;
     font-size: 26px;
     color: antiquewhite;
-    margin-bottom: 20px;
+    margin-bottom: 36px;
 }
 
 .answers-and-info-wrapper {
@@ -149,6 +149,7 @@
 
 .info-bird-lat-name {
     width: fit-content;
+    margin-bottom: 20px;
     font-size: 20px;
     color: coral;
     border-bottom: 1px dotted coral;
@@ -187,6 +188,9 @@
 @media (max-width: 1299px) {
     .category-item {
         width: calc(950px / 6);
+    }
+    .question-image {
+        margin-right: 36px;
     }
   }
   
@@ -261,8 +265,7 @@
     }
     .info-block {
         width: 100%;
-        padding: 8px;
-    }  
+    } 
     .info-title-and-player {
         width: 100%;
     }  

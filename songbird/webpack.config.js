@@ -39,7 +39,7 @@ const config = {
                 use: [stylesHandler,'css-loader'],
             },
             {
-                test: /\.m.сss$/i,
+                test: /\.m.css$/i,
                 use: [
                     stylesHandler,
                     {

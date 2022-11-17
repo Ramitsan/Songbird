@@ -30,7 +30,7 @@
 }
 
 .audio-progress {
-    width: 500px;
+    width: 600px;
     height: 3px;
     border-radius: 3px;
     background-color: antiquewhite;
@@ -59,7 +59,7 @@
 
 @media (max-width: 1299px) {
     .audio-progress {
-        width: 445px;
+        width: 480px;
     }
 }
 
@@ -69,9 +69,8 @@
     }
 
     .audio-progress {
-        width: 280px;
+        width: 285px;
     }
-
 }
 
 @media (max-width: 639px) {  
