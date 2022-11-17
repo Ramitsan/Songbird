@@ -37,6 +37,14 @@
     margin: 20px 0;
 }
 
+.audio-progress-timing {
+    background-color: #E47209;
+    border-radius: 3px;
+    width: 0%;
+    height: 100%;
+    transition: width .1s linear
+}
+
 .audio-timebar {
     display: flex;
     justify-content: space-between;

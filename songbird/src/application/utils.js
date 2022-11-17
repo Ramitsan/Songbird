@@ -12,5 +12,8 @@ const generateRandomElement = (arr) => {
     return arr[index];
   };
 
-  export {generateRandomElement};
+  // если число(время в секундах или минутах) < 10, добавляем перед ним ноль
+ const addZero = n => n < 10 ? '0' + n : n;
+
+  export { generateRandomElement, addZero };
 

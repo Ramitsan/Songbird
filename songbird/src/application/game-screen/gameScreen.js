@@ -28,7 +28,7 @@ export class GameScreen extends Control {
         }
         createCategoryItems();
 
-        // блок с вопросом
+        // блок с вопросом        
         const questionBlock = new Control(mainWrapper.node, 'div', 'question-block', '');
         const questionBlockWrapper = new Control(questionBlock.node, 'div', 'question-block-wrapper', '');
         const questionImage = new Control(questionBlockWrapper.node, 'img', 'question-image', '');
@@ -39,8 +39,7 @@ export class GameScreen extends Control {
         // аудио плеер
         const testData = birdsDataRu[0][0];
         const audioPlayerMain = new AudioPlayerMain(containerRight.node, testData.audio);
-        console.log(testData.audio);
-    
+        
         const answersAndInfoWrapper = new Control(mainWrapper.node, 'div', 'answers-and-info-wrapper', '');
 
         // блок с ответами
@@ -97,11 +96,10 @@ export class GameScreen extends Control {
                 this.onNextQuestion();
             } else {
                 this.onFinish();
-            }
-            
+            }            
         }
 
-        this. getRandomQuestion();
+        this.getRandomQuestion();
     }
 
     getRandomQuestion() {
