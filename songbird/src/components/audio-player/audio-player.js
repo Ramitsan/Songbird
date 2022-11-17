@@ -62,4 +62,8 @@ export class AudioPlayer extends Control {
         this.audioTimePassed.node.textContent = `${addZero(minutesPassed)}:${addZero(secondsPassed)}`;
         this.audioTimeTotal.node.textContent = `${addZero(minutesTotal)}:${addZero(secondsTotal)}`;        
     }
+
+    stop() {
+        this.audio.pause();
+    }
 }

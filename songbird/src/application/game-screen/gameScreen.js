@@ -26,19 +26,27 @@ export class GameScreen extends Control {
                 const categoryItem = new Control(categoryList.node, 'li', 'category-item', `${categoriesNames[i]}`);                
             }
         }
-        createCategoryItems();
+        createCategoryItems();     
+   
+        // получаем рандомный вопрос из категории
+        this.getRandomQuestion();
+        console.log(this.randomQuestion);
 
-        // блок с вопросом        
+        // блок с вопросом 
         const questionBlock = new Control(mainWrapper.node, 'div', 'question-block', '');
         const questionBlockWrapper = new Control(questionBlock.node, 'div', 'question-block-wrapper', '');
         const questionImage = new Control(questionBlockWrapper.node, 'img', 'question-image', '');
-        questionImage.node.src = questionImagePath;
+        this.questionImage = questionImage;
+        this.questionImage.node.src = questionImagePath;
 
         const containerRight = new Control(questionBlockWrapper.node, 'div', 'container-right', '');
         const birdName = new Control(containerRight.node, 'h2', 'bird-name', '*****');
+        this.birdName = birdName;
+
         // аудио плеер
         const testData = birdsDataRu[0][0];
-        const audioPlayerMain = new AudioPlayerMain(containerRight.node, testData.audio);
+        const audioPlayerMain = new AudioPlayerMain(containerRight.node, this.randomQuestion.audio);
+        this.audioPlayerMain = audioPlayerMain;
         
         const answersAndInfoWrapper = new Control(mainWrapper.node, 'div', 'answers-and-info-wrapper', '');
 
@@ -49,7 +57,8 @@ export class GameScreen extends Control {
         const createAnswersItems = () => {
             for (let i = 0; i < birdsDataRu.length; i++) {             
                 const answerItem = new Control(answersList.node, 'li', 'answer-item', `${birdsDataRu[0][i].name}`);
-                const answerIndicator = new Control(answerItem.node, 'span', 'answer-indicator', '');
+                const answerIndicator = new Control(answerItem.node, 'span', 'answer-indicator', '');              
+                                
                 answerItem.node.onclick = () => {
                     firstTempText.node.classList.add('hide-element');
                     secondTempText.node.classList.add('hide-element');
@@ -64,7 +73,20 @@ export class GameScreen extends Control {
                     infoImage.node.src = birdsDataRu[0][i].image;
 
                     infoText.node.classList.remove('hide-element');
-                    infoText.node.textContent = birdsDataRu[0][i].description;                  
+                    infoText.node.textContent = birdsDataRu[0][i].description; 
+                    
+                    if(answerItem.node.textContent === this.randomQuestion.name) {
+                        console.log(1);
+                        this.birdName.node.textContent = this.randomQuestion.name;
+                        this.questionImage.node.src = this.randomQuestion.image;
+                        this.answerIndicator = answerIndicator;
+                        this.answerIndicator.node.style.backgroundColor = 'green';
+                        this.audioPlayerMain.stop();
+                        this.buttonNextQuestion.node.disabled = false; 
+                    } else {
+                        this.answerIndicator = answerIndicator;
+                        this.answerIndicator.node.style.backgroundColor = 'red';
+                    }
                 }
             }
         }
@@ -89,22 +111,21 @@ export class GameScreen extends Control {
         const infoText = new Control(bottomInfoWrapper.node, 'p', 'info-text hide-element', `${testData.description}`)
 
 
-        const buttonNextQuestion = new Control(mainWrapper.node, 'button', 'button-next-question button-next-question--disabled', 'Следующий вопрос');
+        const buttonNextQuestion = new Control(mainWrapper.node, 'button', 'button-next-question', 'Следующий вопрос');
+        this.buttonNextQuestion = buttonNextQuestion;
         buttonNextQuestion.node.disabled = true; 
         buttonNextQuestion.node.onclick = () => {
-            if(this.categoryIndex <= 5) {
+            if(this.categoryIndex < categoriesNames.length) {
                 this.onNextQuestion();
             } else {
                 this.onFinish();
             }            
-        }
-
-        this.getRandomQuestion();
+        }      
     }
 
     getRandomQuestion() {
-        const randomQuestion = generateRandomElement(birdsDataRu[0]);
-        console.log(randomQuestion);
+        const randomQuestion = generateRandomElement(birdsDataRu[0]);      
+        this.randomQuestion = randomQuestion;
     }  
 
 
