@@ -131,24 +131,9 @@ input[type="range"]::-ms-track {
 }
 
 .volume-plus,
-.volume-minus {
-    /* display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 25px 25px;
-    border-radius: 50%; */
+.volume-minus { 
     display: none;
 }
-
-/* .volume-plus {
-    background-image: url('../../assets/img/volume-plus.jpg');
-}
-
-.volume-minus {
-    background-image: url('../../assets/img/volume-minus.jpg');
-} */
 
 @media (max-width: 1299px) {
     .audio-timebar,

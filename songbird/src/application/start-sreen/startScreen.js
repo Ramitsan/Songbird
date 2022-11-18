@@ -1,4 +1,5 @@
 import Control from '../../control/control';
+import { Footer } from '../../components/footer/footer';
 import '../../styles/style.css';
 import './start-screen.css';
 
@@ -40,13 +41,6 @@ export class StartScreen extends Control {
             this.onNewGame();
         };
 
-        const footer = new Control(mainWrapper.node, 'footer', 'footer', '');
-        const authorLinkGithub = new Control(footer.node, 'a', 'author-link-github', '');
-        authorLinkGithub.node.setAttribute('href', 'https://github.com/Ramitsan');
-        authorLinkGithub.node.setAttribute('target', '_blank');
-        const appCreateYear = new Control(footer.node, 'p', 'app-create-year', '2022');
-        const courseLogo = new Control(footer.node, 'a', 'course-logo', '');
-        courseLogo.node.setAttribute('href', 'https://rs.school/js/');
-        courseLogo.node.setAttribute('target', '_blank');
+        const footer = new Footer(mainWrapper.node);
     }    
 }

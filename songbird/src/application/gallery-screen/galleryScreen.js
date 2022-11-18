@@ -1,17 +1,16 @@
 import Control from '../../control/control';
-import { categoriesNames } from '../const';
 import '../../styles/style.css';
 import './gallery-screen.css';
 import birdsDataRu from '../../data/data-ru';
 import { AudioPlayerGallery } from '../../components/audio-player/audio-player-gallery';
+import { Footer } from '../../components/footer/footer';
 
 
 export class GalleryScreen extends Control {
     onStart;
 
     constructor(parentNode) {
-        super(parentNode, 'div', 'gallery-screen', '');
-       
+        super(parentNode, 'div', 'gallery-screen', '');       
 
         const mainWrapper = new Control(this.node, 'div', 'main-wrapper', '');
         this.mainWrapper = mainWrapper;
@@ -23,7 +22,7 @@ export class GalleryScreen extends Control {
             this.onStart();
         }
 
-        const galleryHeader = new Control(mainWrapper.node, 'h2', 'gallery-header', 'Галерея');
+        const galleryTitle = new Control(mainWrapper.node, 'h2', 'gallery-title', 'Галерея');
 
         for (let i = 0; i < birdsDataRu.length; i++) {
             const categoryBlock = new Control(mainWrapper.node, 'div', 'category-block', '');
@@ -51,13 +50,6 @@ export class GalleryScreen extends Control {
             }             
         }
 
-        const footer = new Control(mainWrapper.node, 'footer', 'footer', '');
-        const authorLinkGithub = new Control(footer.node, 'a', 'author-link-github', '');
-        authorLinkGithub.node.setAttribute('href', 'https://github.com/Ramitsan');
-        authorLinkGithub.node.setAttribute('target', '_blank');
-        const appCreateYear = new Control(footer.node, 'p', 'app-create-year', '2022');
-        const courseLogo = new Control(footer.node, 'a', 'course-logo', '');
-        courseLogo.node.setAttribute('href', 'https://rs.school/js/');
-        courseLogo.node.setAttribute('target', '_blank');
+        const footer = new Footer(mainWrapper.node);
     }
 }

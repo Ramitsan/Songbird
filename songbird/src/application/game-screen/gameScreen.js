@@ -7,6 +7,7 @@ import questionImagePath from './../../assets/img/question-image.png';
 import { AudioPlayerMain } from '../../components/audio-player/audio-player-main';
 import { AudioPlayerInfo } from '../../components/audio-player/audio-player-info';
 import { generateRandomElement } from '../utils';
+import { Footer } from '../../components/footer/footer';
 
 
 export class GameScreen extends Control {
@@ -125,6 +126,7 @@ export class GameScreen extends Control {
                 }
             }
         }
+        const footer = new Footer(mainWrapper.node);
 
     }
 
