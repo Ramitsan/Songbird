@@ -8,6 +8,9 @@ import { AudioPlayerMain } from '../../components/audio-player/audio-player-main
 import { AudioPlayerInfo } from '../../components/audio-player/audio-player-info';
 import { generateRandomElement } from '../utils';
 import { Footer } from '../../components/footer/footer';
+import soundProigrysh from './../../assets/audio/zvuk-proigrysha.mp3';
+import soundVyigrysh from './../../assets/audio/zvuk-vyigrysha.mp3';
+
 
 
 export class GameScreen extends Control {
@@ -83,10 +86,12 @@ export class GameScreen extends Control {
                             this.answerIndicator = answerIndicator;
                             this.answerIndicator.node.style.backgroundColor = 'green';
                             this.audioPlayerMain.stop();
+                            this.playSound(soundVyigrysh);
                             this.buttonNextQuestion.node.disabled = false;
                         } else {
                             this.answerIndicator = answerIndicator;
                             this.answerIndicator.node.style.backgroundColor = 'red';
+                            this.playSound(soundProigrysh);
                         }
                     }
                 }
@@ -138,6 +143,12 @@ export class GameScreen extends Control {
     onNextQuestion() {
         this.destroy();
         const gameScreen = new GameScreen(parentNode);
+    }
+
+
+    playSound(sound) {
+        const signal = new Audio(sound);
+        signal.play();
     }
 
 
