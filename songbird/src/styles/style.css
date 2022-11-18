@@ -63,6 +63,43 @@ button {
   color: coral;
 }
 
+.footer {
+  flex-grow: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(113.96deg, #08630d 1.49%, #1da518 101.44%);
+}
+
+.author-link-github {
+  display: block;
+  width: 250px;
+  height: 45px;
+  background-image: url('../assets/icons/github.svg');
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 45px;
+  color: #cbd5de;
+  transition: 0.3s;
+  text-decoration: none
+}
+
+.app-create-year {
+  font-size: 20px;
+  color: antiquewhite;
+}
+
+.course-logo {
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  background-image: url('../assets/icons/rs_school_js.svg');
+  background-repeat: no-repeat;
+}
+
 
 @media (max-width: 1299px) {
   .main-wrapper {

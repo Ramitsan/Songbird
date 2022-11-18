@@ -27,6 +27,11 @@
     text-align: center;
 }
 
+.category-item-active {
+    background-color: antiquewhite;
+    color: #E47209;
+}
+
 .category-item:not(:last-child) {
     border-right: 1px solid antiquewhite;
 }
