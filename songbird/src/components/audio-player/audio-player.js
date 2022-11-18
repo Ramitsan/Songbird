@@ -68,12 +68,12 @@ export class AudioPlayer extends Control {
         this.audioProgressTiming.node.style.width = `${progress}%`;
 
         // текущее время аудио-трека
-        const minutesPassed = Math.floor(currentTime / 60);
-        const secondsPassed = Math.floor(currentTime % 60);
+        const minutesPassed = Math.floor(currentTime / 60) || 0;
+        const secondsPassed = Math.floor(currentTime % 60) || 0;
 
         // общее время аудио-трека
-        const minutesTotal = Math.floor(duration / 60);
-        const secondsTotal = Math.floor(duration % 60);
+        const minutesTotal = Math.floor(duration / 60) || 0;
+        const secondsTotal = Math.floor(duration % 60) || 0;
 
         this.audioTimePassed.node.textContent = `${addZero(minutesPassed)}:${addZero(secondsPassed)}`;
         this.audioTimeTotal.node.textContent = `${addZero(minutesTotal)}:${addZero(secondsTotal)}`;
