@@ -63,6 +63,34 @@ button {
   color: coral;
 }
 
+.header-buttons-wrapper {
+  width: 285px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-button {
+  min-width: 130px;
+  min-height: 50px;
+  padding: 0 10px;
+  background-color: antiquewhite;
+  color: #E47209;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.header-button:focus,
+.header-button:hover {
+  background-color: #E47209;
+  color: antiquewhite; 
+  transition: all 0.3s ease-out;
+}
+
 @media (max-width: 1299px) {
   .main-wrapper {
       width: 950px;
@@ -78,5 +106,16 @@ button {
 @media (max-width: 639px) {
   .main-wrapper {
       width: 90%;
+  }
+  .header {
+    padding: 20px 10px;
+  }
+  .header-buttons-wrapper {
+    width: 192px;
+  }
+  .header-button {
+    min-width: 70px;
+    padding: 0 5px;
+    font-size: 17px;
   }
 }

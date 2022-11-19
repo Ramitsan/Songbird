@@ -17,7 +17,7 @@ export class GalleryScreen extends Control {
         const header = new Control(mainWrapper.node, 'header', 'header', '');
         const logo = new Control(header.node, 'a', 'logo', 'SongBird');
 
-        const button = new Control(header.node, 'button', 'start-button', 'Старт');
+        const button = new Control(header.node, 'button', 'header-button', 'Старт');
         button.node.onclick = () => {
             this.onStart();
         }

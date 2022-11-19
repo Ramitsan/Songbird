@@ -1,6 +1,6 @@
 .gallery-screen {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: lightgreen;
 }
 
@@ -10,25 +10,6 @@
     margin: 20px 0;
     font-size: 36px;
     color: #E47209;
-}
-
-.start-button {
-    width: 100px;
-    height: 40px;
-    background-color: antiquewhite;
-    color: #E47209;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-}
-
-.start-button:focus,
-.start-button:hover {
-    background-color: #E47209;
-    color: antiquewhite; 
-    transition: all 0.3s ease-out;
 }
 
 .category-block {

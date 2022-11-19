@@ -1,6 +1,6 @@
 import Control from '../control/control';
 import { GameScreen } from './game-screen/gameScreen';
-import { StartScreen } from './start-sreen/startScreen';
+import { StartScreen } from './start-screen/startScreen';
 import { ResultsScreen } from './results-screen/resultsScreen';
 import { GalleryScreen } from './gallery-screen/galleryScreen';
 
