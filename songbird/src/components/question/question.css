@@ -11,7 +11,7 @@
 
 .question-image {
     width: 300px;
-    height: auto;
+    height: 200px;
     border-radius: 5px;
     margin-right: 70px;
 }
@@ -136,8 +136,8 @@
 
   @media (max-width: 999px) {    
     .question-image {
-        width: 225px;
-        height: auto;
+        width: 234px;
+        height: 164px;
         margin-right: 15px;
     }
     .answers-and-info-wrapper {
@@ -167,8 +167,8 @@
         align-items: center;
     }
     .question-image {
-        width: 220px;
-        height: auto;
+        width: 284px;
+        height: 190px;
         margin-right: 0;
         margin-bottom: 10px;
     }

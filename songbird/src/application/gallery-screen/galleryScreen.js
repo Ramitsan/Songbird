@@ -5,7 +5,6 @@ import birdsDataRu from '../../data/data-ru';
 import { AudioPlayerGallery } from '../../components/audio-player/audio-player-gallery';
 import { Footer } from '../../components/footer/footer';
 
-
 export class GalleryScreen extends Control {
     onStart;
 

@@ -30,7 +30,7 @@ export class StartScreen extends Control {
         const startContainer = new Control(main.node, 'div', 'start-container', '');
         const startScreenImage = new Control(startContainer.node, 'img', 'start-screen-image', '');
         startScreenImage.node.src = imagePath;
-        const gameDescription = new Control(startContainer.node, 'p', 'game-description', '');
+        const gameDescription = new Control(startContainer.node, 'h1', 'game-description', '');
         gameDescription.node.textContent = 'Приложение-викторина для распознавания птиц по их голосам';
 
         const newGameButton = new Control(startContainer.node, 'button', 'button-start', 'Начать игру');
