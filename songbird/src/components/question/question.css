@@ -1,0 +1,192 @@
+.question-block {
+    padding: 15px;
+    margin: 15px 0;
+    background-color: rgb(9, 102, 29);
+    border-radius: 5px;
+}
+
+.question-block-wrapper {
+    display: flex;
+}
+
+.question-image {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 70px;
+}
+
+.container-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bird-name {
+    margin-top: 10px;
+    font-size: 26px;
+    color: antiquewhite;
+    margin-bottom: 36px;
+}
+
+.answers-and-info-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.answers-block {
+    width: 40%;
+    background-color: rgb(9, 102, 29);
+    border-radius: 5px;
+}
+
+.answer-item {
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+    padding: 15px;
+    padding-left: 35px;
+    font-size: 20px;
+    text-align: left;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+.answer-item:not(:last-child) {
+    border-bottom: 1px solid antiquewhite;
+}
+
+.answer-indicator {
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    top: -15px;
+    left: -20px;
+    border-radius: 50%;
+    background-color: cadetblue;
+}
+
+.info-block {
+    width: 58%;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(9, 102, 29);
+}
+
+.info-block-wrapper {
+    width: 100%;
+}
+
+.top-info-wrapper {
+    padding-bottom: 15px;
+    display: flex;
+}
+
+.temp-text {
+    font-size: 20px;
+    color: antiquewhite;
+    margin-bottom: 8px;
+}
+
+.info-image {
+    width: 230px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.info-title-and-player {
+    display: flex;
+    flex-direction: column;
+} 
+
+.info-bird-name {
+    font-size: 24px;
+    color: antiquewhite;
+    margin-bottom: 10px;
+}
+
+.info-bird-lat-name {
+    width: fit-content;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: coral;
+    border-bottom: 1px dotted coral;
+}
+
+.info-text {
+    font-size: 18px;
+    color: antiquewhite;
+    text-align: justify;
+}
+
+@media (max-width: 1299px) {
+    .question-image {
+        margin-right: 36px;
+    }
+  }
+
+  @media (max-width: 999px) {    
+    .question-image {
+        width: 225px;
+        height: auto;
+        margin-right: 15px;
+    }
+    .answers-and-info-wrapper {
+        align-items: flex-start;
+    }
+    .top-info-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 25px;
+    }
+    .info-image  {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-height: 300px;
+    }
+    .info-title-and-player {
+        align-self: flex-start;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .question-block {
+        padding: 20px 10px;
+    }
+    .question-block-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .question-image {
+        width: 220px;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .bird-name {
+        align-self: center;
+    }
+    .answers-and-info-wrapper {
+        flex-direction: column;
+    }
+    .answers-block {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .info-block {
+        width: 100%;
+    } 
+    .info-title-and-player {
+        width: 100%;
+    }  
+  }
+

@@ -10,10 +10,10 @@
   
   .author-link-github {
     display: block;
-    width: 250px;
+    width: 45px;
     height: 45px;
     background-image: url('../../assets/icons/github.svg');
-    background-size: 35px;
+    background-size: 40px;
     background-repeat: no-repeat;
     background-position: left center;
     line-height: 45px;
@@ -23,7 +23,7 @@
   }
   
   .app-create-year {
-    font-size: 20px;
+    font-size: 24px;
     color: antiquewhite;
   }
   
