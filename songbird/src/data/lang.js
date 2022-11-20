@@ -34,7 +34,7 @@ const langArr = {
         'ru': 'Следующий вопрос',
         'en': 'Next question',
      },
-      // gameScreen
+      // galleryScreen
       'startButton': {
         'ru': 'Старт',
         'en': 'Start',
@@ -42,7 +42,24 @@ const langArr = {
       'galleryTitle': {
         'ru': 'Галерея',
         'en': 'Gallery',
-      }
+      },
+      // resultsScreen
+      'startButton': {
+        'ru': 'Старт',
+        'en': 'Start',
+      },
+      'resultsTitle': {
+        'ru': 'Поздравляем!',
+        'en': 'Congratulations!',
+      },
+      'resultsMessage': {
+        'ru': 'Вы прошли викторину и набрали  баллов из',
+        'en': 'You passed the quiz and scored  points out of ',
+      },
+      'newGameButton': {
+        'ru': 'Начать игру',
+        'en': 'Start the game',
+      },
 }
 
 export default langArr;

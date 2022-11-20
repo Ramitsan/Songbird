@@ -33,7 +33,7 @@ export class StartScreen extends Control {
         buttonLanguage.node.setAttribute('value', 'en');
         location.href = window.location.pathname + '#ru';
 
-        buttonLanguage.node.onclick = () => {     
+        buttonLanguage.node.onclick = async () => {     
             let lang = buttonLanguage.node.value;
             location.href = window.location.pathname + '#' + lang; 
 
@@ -45,7 +45,7 @@ export class StartScreen extends Control {
                 buttonLanguage.node.setAttribute('value', 'en');             
             }       
 
-            location.reload();
+            await location.reload();
         }
 
         const main = new Control(mainWrapper.node, 'main', 'main', '');

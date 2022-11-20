@@ -1,18 +1,17 @@
 import Control from '../../control/control';
-import { categoriesNamesRu } from '../const';
-import { categoriesNamesEn } from '../const';
+import { categoriesNamesRu, categoriesNamesEn, hash } from '../const';
 import '../../styles/style.css';
 import './game-screen.css';
+import {CategoryItems} from '../../components/category-items/category-items';
 import { Footer } from '../../components/footer/footer';
 import { Question } from '../../components/question/question';
-import { hash } from '../../application/const';
 import langArr from '../../data/lang';
 
 export class GameScreen extends Control {
   
     constructor(parentNode) {
         super(parentNode, 'div', 'game-screen', '');
-
+        let categoryIndex = 0;
         const categoriesNames = hash === 'ru' ? categoriesNamesRu : categoriesNamesEn;
 
         const mainWrapper = new Control(this.node, 'div', 'main-wrapper', '');
@@ -21,17 +20,13 @@ export class GameScreen extends Control {
 
         //список категорий
         const gameNav = new Control(mainWrapper.node, 'nav', 'game-nav', '');
-        const categoryList = new Control(gameNav.node, 'ul', 'game-nav-list', '');
-        const createCategoryItems = () => {
-            for (let i = 0; i < categoriesNames.length; i++) {
-                const categoryItem = new Control(categoryList.node, 'li', 'category-item', `${categoriesNames[i]}`);
-            }
-        }
-        createCategoryItems();
 
+        const categoryItems = new CategoryItems(gameNav.node);
+    
         const questionWrapper = new Control(mainWrapper.node, 'div', 'question-wrapper', '');
-        let categoryIndex = 0;
+        
         const gameStart = (categoryIndex) => {
+            categoryItems.setActive(categoryIndex);
             if (categoryIndex < categoriesNames.length) {      
              
                 const newQuestion = new Question(questionWrapper.node, categoryIndex);

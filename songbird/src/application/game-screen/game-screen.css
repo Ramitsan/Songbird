@@ -15,27 +15,6 @@
     align-items: stretch;
 }
 
-.category-item {
-    width: calc(1200px / 6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 10px;
-    background-color: #E47209;
-    font-size: 20px;
-    text-align: center;
-}
-
-.category-item-active {
-    background-color: antiquewhite;
-    color: #E47209;
-}
-
-.category-item:not(:last-child) {
-    border-right: 1px solid antiquewhite;
-}
-
 .question-wrapper {
     width: 100%;
 }
@@ -64,36 +43,14 @@
     transition: all 0.3s ease-out;
 }
 
-@media (max-width: 1299px) {
-    .category-item {
-        width: calc(950px / 6);
-    }
-  }
-  
-  @media (max-width: 999px) {
+@media (max-width: 999px) {
     .game-screen {
         height: 100%;
     }
-    .category-item {
-        width: calc(950px / 6);
-    }
-  }
-  
-  @media (max-width: 639px) {
+}
+
+@media (max-width: 639px) {
     .game-nav-list {
         flex-wrap: wrap;
-    }
-    .category-item {
-        width: calc(100% / 3);
-        font-size: 18px;
-    }     
-    .category-item:not(:last-child){
-        border-right: none;        
-    }
-    .category-item:not(:nth-child(3n)) {
-        border-right: 1px solid antiquewhite;
-    }
-    .category-item:not(:nth-child(n+4)) {
-        border-bottom: 1px solid antiquewhite;
-    }      
-  }
+    }   
+}

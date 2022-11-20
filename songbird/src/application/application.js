@@ -8,9 +8,7 @@ export class Application extends Control {
     constructor(parentNode) {
         super(parentNode);
         this.#mainCycle();  
-    }
-
-   
+    }   
 
     #mainCycle() {
         const startScreen = new StartScreen(this.node);
