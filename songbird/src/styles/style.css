@@ -64,7 +64,7 @@ button {
 }
 
 .header-buttons-wrapper {
-  width: 285px;
+  width: 485px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

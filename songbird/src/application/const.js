@@ -1,3 +1,9 @@
-const categoriesNames = ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'];
+const categoriesNamesRu = ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'];
+const categoriesNamesEn = ['Warm up', 'Passerines', 'Forest birds', 'Songbirds', 'Predator birds', 'Sea birds'];
 
-export {categoriesNames};
+const allLang = ['ru', 'en'];
+
+let hash = window.location.hash.substring(1);
+
+
+export { categoriesNamesRu, categoriesNamesEn, allLang, hash };

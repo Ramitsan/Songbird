@@ -1,14 +1,19 @@
 import Control from '../../control/control';
-import { categoriesNames } from '../const';
+import { categoriesNamesRu } from '../const';
+import { categoriesNamesEn } from '../const';
 import '../../styles/style.css';
 import './game-screen.css';
 import { Footer } from '../../components/footer/footer';
 import { Question } from '../../components/question/question';
+import { hash } from '../../application/const';
+import langArr from '../../data/lang';
 
 export class GameScreen extends Control {
   
     constructor(parentNode) {
         super(parentNode, 'div', 'game-screen', '');
+
+        const categoriesNames = hash === 'ru' ? categoriesNamesRu : categoriesNamesEn;
 
         const mainWrapper = new Control(this.node, 'div', 'main-wrapper', '');
         const header = new Control(mainWrapper.node, 'header', 'header', '');
@@ -33,7 +38,7 @@ export class GameScreen extends Control {
                 newQuestion.onAnswer = () => {
                     buttonNextQuestion.node.disabled = false;
                 }
-                const buttonNextQuestion = new Control(questionWrapper.node, 'button', 'button-next-question', categoryIndex === 5 ?  'Результаты' : 'Следующий вопрос');
+                const buttonNextQuestion = new Control(questionWrapper.node, 'button', 'button-next-question', categoryIndex === 5 ?  langArr['buttonNextQuestion1'][hash] : langArr['buttonNextQuestion2'][hash]);
 
                 buttonNextQuestion.node.disabled = true;
                 this.buttonNextQuestion = buttonNextQuestion;

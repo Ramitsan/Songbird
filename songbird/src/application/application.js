@@ -7,8 +7,10 @@ import { GalleryScreen } from './gallery-screen/galleryScreen';
 export class Application extends Control {
     constructor(parentNode) {
         super(parentNode);
-        this.#mainCycle();       
+        this.#mainCycle();  
     }
+
+   
 
     #mainCycle() {
         const startScreen = new StartScreen(this.node);
