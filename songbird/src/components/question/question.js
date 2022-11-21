@@ -59,8 +59,10 @@ export class Question extends Control {
                     infoImage.node.src = birdsData[counter][j].image;
                     infoText.node.textContent = birdsData[counter][j].description;
                     audioPlayerInfo.audio.src = birdsData[counter][j].audio;
+                    let isWin = false;
 
-                    if (answerItem.node.textContent === this.randomQuestion.name) {
+                    if (answerItem.node.textContent === this.randomQuestion.name && !isWin) {
+                        isWin = true;
                         this.birdName.node.textContent = this.randomQuestion.name;
                         this.questionImage.node.src = this.randomQuestion.image;
                         this.answerIndicator = answerIndicator;
@@ -69,6 +71,7 @@ export class Question extends Control {
                         this.playSound(soundVyigrysh);
                         this.onAnswer();
                     } else {
+                        isWin = false;
                         this.answerIndicator = answerIndicator;
                         this.answerIndicator.node.style.backgroundColor = 'red';
                         this.playSound(soundProigrysh);

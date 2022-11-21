@@ -13,19 +13,16 @@ export class CategoryItems extends Control {
         const categoryItems = [];
         this.categoryItems = categoryItems;
 
-        const createCategoryItems = () => {
-            for (let i = 0; i < categoriesNames.length; i++) {
-                const categoryItem = new Control(this.node, 'li', 'category-item', `${categoriesNames[i]}`);
-                this.categoryItems.push(categoryItem);
-            }
+        for (let i = 0; i < categoriesNames.length; i++) {
+            const categoryItem = new Control(this.node, 'li', 'category-item', `${categoriesNames[i]}`);
+            this.categoryItems.push(categoryItem);
         }
-        createCategoryItems();       
     }
 
     setActive(index) {
         for (let j = 0; j < this.categoryItems.length; j++) {
             this.categoryItems[j].node.classList.remove('category-item-active');
-            if(index === j) this.categoryItems[j].node.classList.add('category-item-active');
+            if (index === j) this.categoryItems[j].node.classList.add('category-item-active');
         }
     }
 
