@@ -2,16 +2,17 @@ import Control from '../../control/control';
 import '../../styles/style.css';
 import './results-screen.css';
 import { Footer } from '../../components/footer/footer';
-import { lang } from '../lang';
+import { lang } from '../model/lang';
 import elemTranslate from '../../data/elem-translate';
 
 export class ResultsScreen extends Control {
     onNewGame;
 
-    constructor(parentNode) {
+    constructor(parentNode, score) {
         super(parentNode, 'div', 'results-screen', '');
 
         let hash = lang.currentLang;
+        console.log(score);
 
         const mainWrapper = new Control(this.node, 'div', 'main-wrapper', '');
         this.mainWrapper = mainWrapper;

@@ -7,7 +7,7 @@ import { categoriesNamesRu } from '../const';
 import { categoriesNamesEn } from '../const';
 import { AudioPlayerGallery } from '../../components/audio-player/audio-player-gallery';
 import { Footer } from '../../components/footer/footer';
-import { lang } from '../../application/lang';
+import { lang } from '../model/lang';
 import elemTranslate from '../../data/elem-translate';
 
 

@@ -3,7 +3,7 @@ import { Footer } from '../../components/footer/footer';
 import '../../styles/style.css';
 import './start-screen.css';
 import imagePath from './../../assets/img/songbird.png';
-import { lang } from '../lang';
+import { lang } from '../model/lang';
 import elemTranslate from '../../data/elem-translate';
 
 
@@ -36,8 +36,6 @@ export class StartScreen extends Control {
         const buttonLanguage = new Control(headerButtonsWrapper.node, 'button', 'header-button header-button--lang', 'En');
         this.buttonLanguage = buttonLanguage;
        
-        // location.href = window.location.pathname + '#' + lang.currentLang;
-
         buttonLanguage.node.onclick = () => {     
             lang.nextLang();
         }

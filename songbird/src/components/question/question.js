@@ -9,7 +9,7 @@ import soundProigrysh from './../../assets/audio/zvuk-proigrysha.mp3';
 import soundVyigrysh from './../../assets/audio/zvuk-vyigrysha.mp3';
 import '../../styles/style.css';
 import './question.css';
-import { lang } from '../../application/lang';
+import { lang } from '../../application/model/lang';
 import elemTranslate from '../../data/elem-translate';
 
 export class Question extends Control {
@@ -46,6 +46,7 @@ export class Question extends Control {
         
 
         const createAnswersItems = () => {
+            let isWin = false;
             for (let j = 0; j < birdsData[counter].length; j++) {
                 const answerItem = new Control(answersList.node, 'li', 'answer-item', `${birdsData[counter][j].name}`);
                 const answerIndicator = new Control(answerItem.node, 'span', 'answer-indicator', '');
@@ -62,10 +63,10 @@ export class Question extends Control {
                     infoImage.node.src = birdsData[counter][j].image;
                     infoText.node.textContent = birdsData[counter][j].description;
                     audioPlayerInfo.audio.src = birdsData[counter][j].audio;
-                    let isWin = false;
-                 
+                   
+                    if(isWin) return;
 
-                    if (answerItem.node.textContent === this.randomQuestion.name && !isWin) {
+                    if (answerItem.node.textContent === this.randomQuestion.name) {
                         isWin = true;
                      
                         this.birdName.node.textContent = this.randomQuestion.name;
@@ -78,7 +79,6 @@ export class Question extends Control {
                         this.onAnswer(answersFalseCount);
                         console.log('неправильных ответов ', answersFalseCount);
                     } else {
-                        isWin = false;
                         answersFalse.push(answerItem.node);   
                         this.answerIndicator = answerIndicator;
                         this.answerIndicator.node.style.backgroundColor = 'red';

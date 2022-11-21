@@ -1,5 +1,5 @@
 import Control from '../../control/control';
-import { lang } from '../../application/lang';
+import { lang } from '../model/lang';
 import elemTranslate from '../../data/elem-translate';
 import { categoriesNamesRu, categoriesNamesEn } from '../const';
 import {CategoryItems} from '../../components/category-items/category-items';
@@ -56,7 +56,7 @@ export class GameScreen extends Control {
                     gameStart(categoryIndex + 1);
                  }                
             } else {
-                this.onFinish();
+                this.onFinish(this.totalScore);
             }
         }
         gameStart(categoryIndex);

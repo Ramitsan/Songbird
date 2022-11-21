@@ -1,7 +1,7 @@
 import Control from '../../control/control';
 import { categoriesNamesRu, categoriesNamesEn } from '../../application/const';
 import './category-items.css';
-import { lang } from '../../application/lang';
+import { lang } from '../../application/model/lang';
 
 export class CategoryItems extends Control {
     constructor(parentNode) {

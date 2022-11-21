@@ -1,5 +1,5 @@
 import Control from "../../control/control";
-import { lang } from '../../application/lang';
+import { lang } from '../../application/model/lang';
 import elemTranslate from '../../data/elem-translate';
 import '../../styles/style.css';
 import './score.css';
