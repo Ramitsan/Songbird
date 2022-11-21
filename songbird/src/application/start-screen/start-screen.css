@@ -68,7 +68,7 @@
 }
 
 @media (max-width: 639px) {
-   .game-description {
+    .game-description {
         width: 85%;
         font-size: 26px;
     }

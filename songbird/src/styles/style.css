@@ -125,11 +125,26 @@ button {
   }
   .header-buttons-wrapper {
     width: 270px;
-    flex-wrap: wrap;
   }
   .header-button {
     min-width: 50px;
     padding: 0 5px;
     font-size: 17px;
   }
+}
+
+  @media (max-width: 449px) {
+    .header-buttons-wrapper {
+      width: 190px;
+    }
+
+    .header-button {
+      font-size: 14px;
+      width: 70px;
+    }
+
+    .header-button--lang {
+      min-width: 40px;
+      width: 40px;
+    }
 }
