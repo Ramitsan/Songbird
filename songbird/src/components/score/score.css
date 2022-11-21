@@ -1,0 +1,26 @@
+.score-wrapper {
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.score-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: antiquewhite;
+}
+
+.score-count {
+    display: inline-block;
+    width: 60px;
+    height: 35px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
+    color: #E47209;
+    text-align: center;
+    vertical-align: center;
+}

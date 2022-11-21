@@ -61,7 +61,6 @@ export class StartScreen extends Control {
     }
 
     updateLang = (lang) => {
-        console.log(lang);
         this.buttonNewGame.node.textContent = elemTranslate['buttonNewGame'][lang];
         this.buttonGallery.node.textContent = elemTranslate['buttonGallery'][lang];
         this.gameDescription.node.textContent = elemTranslate['gameDescription'][lang];

@@ -42,17 +42,20 @@ export class Question extends Control {
         // блок с ответами
         const answersBlock = new Control(answersAndInfoWrapper.node, 'div', 'answers-block', '');
         const answersList = new Control(answersBlock.node, 'ul', 'answers-list', '');
+        const answersFalse = [];
+        
 
         const createAnswersItems = () => {
             for (let j = 0; j < birdsData[counter].length; j++) {
                 const answerItem = new Control(answersList.node, 'li', 'answer-item', `${birdsData[counter][j].name}`);
                 const answerIndicator = new Control(answerItem.node, 'span', 'answer-indicator', '');
+              
 
                 answerItem.node.onclick = () => {
                     firstTempText.node.classList.add('hide-element');
                     secondTempText.node.classList.add('hide-element');
 
-                    infoBlockWrapper.node.classList.remove('hide-element');
+                    infoBlockWrapper.node.classList.remove('hide-element');                            
 
                     infoBirdName.node.textContent = birdsData[counter][j].name;
                     infoBirdLatName.node.textContent = birdsData[counter][j].species;
@@ -60,26 +63,34 @@ export class Question extends Control {
                     infoText.node.textContent = birdsData[counter][j].description;
                     audioPlayerInfo.audio.src = birdsData[counter][j].audio;
                     let isWin = false;
+                 
 
                     if (answerItem.node.textContent === this.randomQuestion.name && !isWin) {
                         isWin = true;
+                     
                         this.birdName.node.textContent = this.randomQuestion.name;
                         this.questionImage.node.src = this.randomQuestion.image;
                         this.answerIndicator = answerIndicator;
                         this.answerIndicator.node.style.backgroundColor = 'green';
                         this.audioPlayerMain.stop();
                         this.playSound(soundVyigrysh);
-                        this.onAnswer();
+                        const answersFalseCount = answersFalse.length;
+                        this.onAnswer(answersFalseCount);
+                        console.log('неправильных ответов ', answersFalseCount);
                     } else {
                         isWin = false;
+                        answersFalse.push(answerItem.node);   
                         this.answerIndicator = answerIndicator;
                         this.answerIndicator.node.style.backgroundColor = 'red';
                         this.playSound(soundProigrysh);
                     }
                 }
+                
             }
         }
         createAnswersItems();
+        console.log('answersFalse = ', answersFalse);
+             
 
         //блок с информацией о птице     
         const infoBlock = new Control(answersAndInfoWrapper.node, 'div', 'info-block', '');
@@ -109,4 +120,5 @@ export class Question extends Control {
         const signal = new Audio(sound);
         signal.play();
     }
+
 }

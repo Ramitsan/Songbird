@@ -27,6 +27,7 @@ const config = {
         new CopyPlugin({
             patterns: [
               { from: "./src/assets/img", to: "./public/img" },
+              { from: "./src/assets/audio", to: "./public/audio" },
             ],
           }),
 
