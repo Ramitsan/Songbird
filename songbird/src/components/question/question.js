@@ -9,14 +9,14 @@ import soundProigrysh from './../../assets/audio/zvuk-proigrysha.mp3';
 import soundVyigrysh from './../../assets/audio/zvuk-vyigrysha.mp3';
 import '../../styles/style.css';
 import './question.css';
-import { hash } from '../../application/const';
-import langArr from '../../data/lang';
+import { lang } from '../../application/lang';
+import elemTranslate from '../../data/elem-translate';
 
 export class Question extends Control {
     
     constructor(parentNode, counter) {
         super(parentNode, 'div', 'question', '');
-
+        let hash = lang.currentLang;
         const birdsData = hash === 'ru' ? birdsDataRu : birdsDataEn;
 
         // получаем рандомный вопрос из категории  
@@ -81,8 +81,8 @@ export class Question extends Control {
         //блок с информацией о птице     
         const infoBlock = new Control(answersAndInfoWrapper.node, 'div', 'info-block', '');
         const infoBlockWrapper = new Control(infoBlock.node, 'div', 'info-block-wrapper hide-element', '');
-        const firstTempText = new Control(infoBlock.node, 'p', 'temp-text', langArr['firstTempText'][hash]);
-        const secondTempText = new Control(infoBlock.node, 'p', 'temp-text', langArr['secondTempText'][hash]);
+        const firstTempText = new Control(infoBlock.node, 'p', 'temp-text', elemTranslate['firstTempText'][hash]);
+        const secondTempText = new Control(infoBlock.node, 'p', 'temp-text', elemTranslate['secondTempText'][hash]);
 
         const topInfoWrapper = new Control(infoBlockWrapper.node, 'div', 'top-info-wrapper', '');
         const infoImage = new Control(topInfoWrapper.node, 'img', 'info-image', '');

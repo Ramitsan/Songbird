@@ -7,14 +7,17 @@ import { categoriesNamesRu } from '../const';
 import { categoriesNamesEn } from '../const';
 import { AudioPlayerGallery } from '../../components/audio-player/audio-player-gallery';
 import { Footer } from '../../components/footer/footer';
-import { hash } from '../../application/const';
-import langArr from '../../data/lang';
+import { lang } from '../../application/lang';
+import elemTranslate from '../../data/elem-translate';
+
 
 export class GalleryScreen extends Control {
     onStart;
 
     constructor(parentNode) {
-        super(parentNode, 'div', 'gallery-screen', '');  
+        super(parentNode, 'div', 'gallery-screen', '');         
+
+        let hash = lang.currentLang;
         
         const birdsData = hash === 'ru' ? birdsDataRu : birdsDataEn;
         const categoriesNames = hash === 'ru' ? categoriesNamesRu : categoriesNamesEn;
@@ -24,12 +27,12 @@ export class GalleryScreen extends Control {
         const header = new Control(mainWrapper.node, 'header', 'header', '');
         const logo = new Control(header.node, 'a', 'logo', 'SongBird');
 
-        const startButton = new Control(header.node, 'button', 'header-button', langArr['startButton'][hash]);
+        const startButton = new Control(header.node, 'button', 'header-button', elemTranslate['startButton'][hash]);
         startButton.node.onclick = () => {
             this.onStart();
         }
 
-        const galleryTitle = new Control(mainWrapper.node, 'h2', 'gallery-title', langArr['galleryTitle'][hash]);
+        const galleryTitle = new Control(mainWrapper.node, 'h2', 'gallery-title', elemTranslate['galleryTitle'][hash]);
 
         for (let i = 0; i < birdsData.length; i++) {
             const categoryBlock = new Control(mainWrapper.node, 'div', 'category-block', '');

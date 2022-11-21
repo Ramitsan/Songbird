@@ -1,4 +1,4 @@
-const langArr = {
+const elemTranslate = {
     // startScreen
     'buttonNewGame': {
         'ru': 'Новая игра',
@@ -15,6 +15,10 @@ const langArr = {
     'newGameButton': {
         'ru': 'Начать игру',
         'en': 'Start the game',
+    },
+    'buttonLanguage': {
+        'ru': 'En',
+        'en': 'Ru',
     },
     // question
     'firstTempText': {
@@ -62,4 +66,4 @@ const langArr = {
       },
 }
 
-export default langArr;
+export default elemTranslate;

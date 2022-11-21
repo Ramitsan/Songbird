@@ -17,27 +17,5 @@ const generateRandomElement = (arr) => {
 // если число(время в секундах или минутах) < 10, добавляем перед ним ноль
 const addZero = n => n < 10 ? '0' + n : n;
 
-// перенаправить на url с указанием языка
-// const changeURLLanguage = (button) => {
-//   let lang = button.value;
-//   location.href = window.location.pathname + '#' + lang;
-//   location.reload();
-// }
-
-// const changeLanguage = () => {
-//   let hash = window.location.hash;
-//   hash = hash.substring(1);
-
-//   if (!allLang.includes(hash)) {
-//     location.href = window.location.pathname + '#en';
-//     location.reload();
-//     console.log(hash);
-//   }
-//   buttonLanguage.node.setAttribute('value', hash);
-// }
-
-
-
-
 export { generateRandomElement, addZero };
 

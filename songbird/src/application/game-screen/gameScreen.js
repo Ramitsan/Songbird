@@ -5,13 +5,16 @@ import './game-screen.css';
 import {CategoryItems} from '../../components/category-items/category-items';
 import { Footer } from '../../components/footer/footer';
 import { Question } from '../../components/question/question';
-import langArr from '../../data/lang';
+import { lang } from '../../application/lang';
+import elemTranslate from '../../data/elem-translate';
 
 export class GameScreen extends Control {
   
     constructor(parentNode) {
         super(parentNode, 'div', 'game-screen', '');
-        let categoryIndex = 0;
+
+        let hash = lang.currentLang;
+      
         const categoriesNames = hash === 'ru' ? categoriesNamesRu : categoriesNamesEn;
 
         const mainWrapper = new Control(this.node, 'div', 'main-wrapper', '');
@@ -20,11 +23,11 @@ export class GameScreen extends Control {
 
         //список категорий
         const gameNav = new Control(mainWrapper.node, 'nav', 'game-nav', '');
-
         const categoryItems = new CategoryItems(gameNav.node);
     
         const questionWrapper = new Control(mainWrapper.node, 'div', 'question-wrapper', '');
-        
+
+        let categoryIndex = 0;
         const gameStart = (categoryIndex) => {
             categoryItems.setActive(categoryIndex);
             if (categoryIndex < categoriesNames.length) {      
@@ -33,7 +36,7 @@ export class GameScreen extends Control {
                 newQuestion.onAnswer = () => {
                     buttonNextQuestion.node.disabled = false;
                 }
-                const buttonNextQuestion = new Control(questionWrapper.node, 'button', 'button-next-question', categoryIndex === 5 ?  langArr['buttonNextQuestion1'][hash] : langArr['buttonNextQuestion2'][hash]);
+                const buttonNextQuestion = new Control(questionWrapper.node, 'button', 'button-next-question', categoryIndex === 5 ?  elemTranslate['buttonNextQuestion1'][hash] : elemTranslate['buttonNextQuestion2'][hash]);
 
                 buttonNextQuestion.node.disabled = true;
                 this.buttonNextQuestion = buttonNextQuestion;

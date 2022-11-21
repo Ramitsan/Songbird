@@ -1,10 +1,13 @@
 import Control from '../../control/control';
-import { categoriesNamesRu, categoriesNamesEn, hash } from '../../application/const';
+import { categoriesNamesRu, categoriesNamesEn } from '../../application/const';
 import './category-items.css';
+import { lang } from '../../application/lang';
 
 export class CategoryItems extends Control {
     constructor(parentNode) {
         super(parentNode, 'ul', 'game-nav-list', '');
+
+        let hash = lang.currentLang;
 
         const categoriesNames = hash === 'ru' ? categoriesNamesRu : categoriesNamesEn;
         const categoryItems = [];

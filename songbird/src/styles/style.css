@@ -101,6 +101,19 @@ button {
   .main-wrapper {
       width: 630px;
   }
+  .header-buttons-wrapper {
+    width: 300px;
+  }
+  .header-button {
+    min-width: 112px;
+    padding: 0 5px;
+    font-size: 16px;
+  }
+
+  .header-button--lang {
+    min-width: 50px;
+    width: 50px;
+  }
 }
 
 @media (max-width: 639px) {
@@ -111,10 +124,11 @@ button {
     padding: 20px 10px;
   }
   .header-buttons-wrapper {
-    width: 192px;
+    width: 270px;
+    flex-wrap: wrap;
   }
   .header-button {
-    min-width: 70px;
+    min-width: 50px;
     padding: 0 5px;
     font-size: 17px;
   }
