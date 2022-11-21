@@ -49,8 +49,7 @@ export class Question extends Control {
             let isWin = false;
             for (let j = 0; j < birdsData[counter].length; j++) {
                 const answerItem = new Control(answersList.node, 'li', 'answer-item', `${birdsData[counter][j].name}`);
-                const answerIndicator = new Control(answerItem.node, 'span', 'answer-indicator', '');
-              
+                const answerIndicator = new Control(answerItem.node, 'span', 'answer-indicator', '');              
 
                 answerItem.node.onclick = () => {
                     firstTempText.node.classList.add('hide-element');
@@ -77,7 +76,6 @@ export class Question extends Control {
                         this.playSound(soundVyigrysh);
                         const answersFalseCount = answersFalse.length;
                         this.onAnswer(answersFalseCount);
-                        console.log('неправильных ответов ', answersFalseCount);
                     } else {
                         answersFalse.push(answerItem.node);   
                         this.answerIndicator = answerIndicator;
@@ -88,9 +86,7 @@ export class Question extends Control {
                 
             }
         }
-        createAnswersItems();
-        console.log('answersFalse = ', answersFalse);
-             
+        createAnswersItems();             
 
         //блок с информацией о птице     
         const infoBlock = new Control(answersAndInfoWrapper.node, 'div', 'info-block', '');

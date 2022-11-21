@@ -55,13 +55,14 @@ button {
 .logo {
   color: antiquewhite;
   font-size: 26px;
+  cursor: auto;
 }
 
-.logo:focus,
+/* .logo:focus,
 .logo:hover {
   transition: all 0.3s ease-out;
   color: coral;
-}
+} */
 
 .header-buttons-wrapper {
   width: 485px;

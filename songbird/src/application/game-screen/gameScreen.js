@@ -72,8 +72,6 @@ export class GameScreen extends Control {
         if(answersFalseCount === 4)  this.score = 1;
         if(answersFalseCount === 5)  this.score = 0;
         this.totalScore += this.score;
-        console.log('score = ', this.score);
-        console.log('totalScore = ', this.totalScore);
         return this.totalScore;
     }
 

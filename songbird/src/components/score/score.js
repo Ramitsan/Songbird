@@ -14,7 +14,6 @@ export class Score extends Control {
         const scoreCount = new Control(this.node, 'span', 'score-count', '');
         this.scoreCount = scoreCount;
         scoreCount.node.textContent = score;
-        console.log(score);
     }
 
     updateScore(score) {

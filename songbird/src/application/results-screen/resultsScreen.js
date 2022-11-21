@@ -12,8 +12,7 @@ export class ResultsScreen extends Control {
         super(parentNode, 'div', 'results-screen', '');
 
         let hash = lang.currentLang;
-        console.log(score);
-
+     
         const mainWrapper = new Control(this.node, 'div', 'main-wrapper', '');
         this.mainWrapper = mainWrapper;
         const header = new Control(mainWrapper.node, 'header', 'header', '');
