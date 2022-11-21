@@ -56,13 +56,9 @@ const elemTranslate = {
         'ru': 'Поздравляем!',
         'en': 'Congratulations!',
       },
-      'resultsMessage': {
-        'ru': 'Вы прошли викторину и набрали  баллов из 30',
-        'en': 'You passed the quiz and scored  points out of 30',
-      },
-      'newGameButton': {
-        'ru': 'Начать игру',
-        'en': 'Start the game',
+      'newGameButtonResults': {
+        'ru': 'Начать новую игру',
+        'en': 'Start a new game',
       },
       //score
       'scoreTitle': {

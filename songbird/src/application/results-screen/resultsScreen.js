@@ -25,11 +25,16 @@ export class ResultsScreen extends Control {
         }
 
         const resultsBlock = new Control(mainWrapper.node, 'div', 'results-block', '');
-        const resultsTitle = new Control(resultsBlock.node, 'h2', 'results-title', elemTranslate['resultsTitle'][hash]);
-        const resultsMessage = new Control(resultsBlock.node, 'p', 'results-message', elemTranslate['resultsMessage'][hash]);
+        if(score === 30 ) {
+            const resultsTitle = new Control(resultsBlock.node, 'h2', 'results-title', elemTranslate['resultsTitle'][hash]);
+        }
+        
+        const resultsMessage = new Control(resultsBlock.node, 'p', 'results-message', '');
+        if(hash === 'ru') resultsMessage.node.textContent = `Вы прошли викторину и набрали ${score} баллов из 30`;
+        if(hash === 'en') resultsMessage.node.textContent = `You passed the quiz and scored ${score} points out of 30`;
 
-        const newGameButton = new Control(resultsBlock.node, 'button', 'button-start', elemTranslate['newGameButton'][hash]);
-        newGameButton.node.onclick = () => {
+        const newGameButtonResults = new Control(resultsBlock.node, 'button', 'button-start--results', elemTranslate['newGameButtonResults'][hash]);
+        newGameButtonResults.node.onclick = () => {
             this.onNewGame();
         };        
        
