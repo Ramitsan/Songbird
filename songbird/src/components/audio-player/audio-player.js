@@ -26,6 +26,14 @@ export class AudioPlayer extends Control {
 
         const audioTimebarWrapper = new Control(this.node, 'div', styles['audio-timebar-wrapper'], '');
         const audioProgress = new Control(audioTimebarWrapper.node, 'div', styles['audio-progress'], '');
+        // перемотка
+        audioProgress.node.onclick =(evt) => {
+            const x = evt.offsetX;
+            const allWidth = audioProgress.node.clientWidth;
+            const progress = (x / allWidth) * this.audio.duration;
+            this.audio.currentTime = progress;
+        }
+
         const audioProgressTiming = new Control(audioProgress.node, 'div', styles['audio-progress-timing'], '');
         this.audioProgressTiming = audioProgressTiming;
 
