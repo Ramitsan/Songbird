@@ -5,7 +5,7 @@
 
 #### Technologies & Tools: JavaScript(ES6), Webpack
 #### Description: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/songbird/songbird-2022q3.md
-#### Deploy: https://ramitsan.github.io/Songbird
+#### Deploy: https://ramitsan.github.io/Songbird, https://rolling-scopes-school.github.io/ramitsan-JSFE2022Q3/songbird/index.html
 
 ### Вёрстка, дизайн, UI всех трёх страниц приложения
 - [x] Стартовая страница приложения (вёрстка адаптивная - проверяется на ширине от 1920рх до 360рх) 
@@ -47,6 +47,5 @@
 - [x] страница с результатами содержит количество набранных баллов и кнопку с предложением сыграть ещё раз (или уведомление об окончании игры, если набрано максимальное количество баллов) 
 
 ### Extra scope
-Можно выбрать предложенные варианты или придумать свои, аналогичные им по сложности
 - [x] локализация приложения на два языка, выбранный язык хранится в local storage и сохраняется при перезагрузке
 - [x] создание галереи всех птиц приложения c информацией о них (фото, аудио, название, описание) 
